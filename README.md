@@ -1,0 +1,2 @@
+Intelligent Conversational Engine built using Trie, Bigram Model, Red-Black Tree, and Graph-based word relationships.
+This project implements an advanced text-processing and conversational assistant that supports auto-completion, next-word prediction, frequency analysis, and relationship mapping between words. The system integrates multiple data structures—Trie for prefix search, Bigram model for prediction, Red-Black Tree for efficient lookup, and NetworkX graph for semantic word connections—to deliver an enhanced conversational experience.
