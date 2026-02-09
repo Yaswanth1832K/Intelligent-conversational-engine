@@ -1,102 +1,14 @@
-# Intelligent Conversational Engine
+# Intelligent Conversational Engine (Web Edition)
 
-A data-structure–driven conversational text engine that provides real-time auto-completion, next-word prediction, and semantic word relationship mapping.
+A data-structure–driven conversational text engine that provides real-time auto-completion, next-word prediction, and semantic word relationship mapping, now with a modern Web Interface.
 
 ---
 
 ## 📌 Overview
 
-The Intelligent Conversational Engine is a text-processing and prediction system designed to simulate the behavior of a smart typing assistant.
-The application analyzes previously observed text patterns and predicts user input using efficient data structures and probabilistic modeling.
+The Intelligent Conversational Engine has been transformed from a terminal-based tool into a full-stack web application. It features a **FastAPI** backend for high-performance prediction and a **React (Vite)** frontend for a premium user experience.
 
-The system not only suggests word completions but also predicts the most likely next word and discovers semantic relationships between words using graph analysis.
-
-This project demonstrates the practical application of core Computer Science concepts such as **Trie search, probabilistic language models, balanced trees, and graph traversal** in a real-world software system.
-
----
-
-## ❓ Problem Statement
-
-Typing assistants (like search engines and keyboards) must quickly:
-
-* complete partially typed words
-* predict the next word
-* understand related words
-
-A naive implementation would be slow when the dataset grows large.
-This project solves the problem using optimized data structures for fast lookup and prediction.
-
----
-
-## ✨ Features
-
-* Prefix-based auto-completion
-* Next-word prediction
-* Word frequency analysis
-* Semantic relationship detection between words
-* Efficient lookup for large text datasets
-* Real-time suggestion generation
-
----
-
-## 🧠 How It Works
-
-**Workflow**
-
-User Input → Prefix Detection → Word Lookup → Prediction Model → Suggestion Output
-
-1. The user types a partial word.
-2. The system searches matching words using a Trie.
-3. The Bigram model predicts the most probable next word.
-4. The Red-Black Tree manages word frequencies and fast retrieval.
-5. A graph structure maps relationships between words.
-6. Suggestions are returned to the user.
-
----
-
-## ⚙️ Core Algorithms & Data Structures
-
-### Trie (Prefix Tree)
-
-* Stores vocabulary efficiently
-* Enables fast prefix search
-* Used for auto-completion
-
-### Bigram Language Model
-
-* Calculates probability of the next word
-* Uses previous word to predict the next likely word
-
-### Red-Black Tree
-
-* Balanced binary search tree
-* Maintains sorted word frequency
-* Ensures O(log n) insertion and lookup
-
-### Graph-Based Word Relationships
-
-* Implemented using NetworkX
-* Connects semantically related words
-* Helps discover associated words
-
----
-
-## 🛠 Tech Stack
-
-**Language**
-
-* Python
-
-**Libraries**
-
-* NetworkX (graph relationships)
-* Standard Python data structures
-
-**Concepts Used**
-
-* Data Structures & Algorithms
-* Natural Language Processing basics
-* Probability-based prediction
+The system analyzes text patterns using optimized data structures: **Tries** for autocomplete, **Bigram models** for next-word prediction, **Red-Black Trees** for frequency management, and **Graphs** for semantic mapping.
 
 ---
 
@@ -105,83 +17,77 @@ User Input → Prefix Detection → Word Lookup → Prediction Model → Suggest
 ```
 intelligent-conversational-engine/
 │
-├── intelligent_engine.py
-├── README.md
+├── backend/                # FastAPI Application
+│   ├── api/                # API Endpoints
+│   │   └── index.py        # Main FastAPI app
+│   ├── engine/             # Core Logic (Trie, Bigram, RBT, Graph)
+│   │   └── intelligent_engine.py
+│   └── requirements.txt    # Python dependencies
+│
+├── frontend/               # React (Vite) Application
+│   ├── src/                # UI Components & Logic
+│   │   ├── App.jsx         # Main Chat UI
+│   │   └── App.css         # Premium Styles
+│   └── .env                # Environment configuration
+│
+├── README.md               # You are here
+└── intelligent_engine.py   # Original terminal-based logic (legacy)
 ```
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Rapid Setup
 
-### 1. Clone Repository
+### 1. Backend (FastAPI)
 
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn api.index:app --host 0.0.0.0 --port 10000
 ```
-git clone https://github.com/Yaswanth1832K/Intelligent-conversational-engine.git
-cd Intelligent-conversational-engine
-```
+- API will be live at `http://localhost:10000`
+- Docs: `http://localhost:10000/docs`
 
-### 2. Install Requirements
+### 2. Frontend (React)
 
+```bash
+cd frontend
+npm install
+npm run dev
 ```
-pip install networkx
-```
-
-### 3. Run the Program
-
-```
-python intelligent_engine.py
-```
+- UI will be live at `http://localhost:5173`
 
 ---
 
-## ▶️ Usage
+## ✨ Web Features
 
-1. Run the program
-2. Start typing a word
-3. The system will:
-
-   * suggest completions
-   * predict next word
-   * show related words
-
----
-
-## 📊 Example Capabilities
-
-* Typing "comp" → suggests: computer, computation, company
-* Typing "machine" → predicts: learning
-* Displays related words such as AI ↔ data ↔ model
+- **Vibrant UI**: Sleek dark mode with glassmorphism effects.
+- **Top Words**: Real-time frequency analysis.
+- **Auto-complete**: Fast prefix matching via Trie.
+- **Next-Word Prediction**: Probabilistic next-word suggestions.
+- **Semantic Mapping**: Visual insights into word relationships.
+- **Memory Persistence**: The engine maintains state as long as the backend runs.
 
 ---
 
-## 🎯 Learning Outcomes
+## 🛠 Tech Stack
 
-This project demonstrates:
-
-* Practical implementation of Trie
-* Language modeling using Bigrams
-* Balanced tree operations
-* Graph traversal for semantic mapping
-* Combining multiple data structures in one system
+- **Backend**: Python 3.x, FastAPI, NetworkX, Uvicorn.
+- **Frontend**: React 18/19, Vite, CSS3 (Vanilla).
+- **Deployment**: Prepared for Render (Backend) and Vercel (Frontend).
 
 ---
 
-## 🔮 Future Improvements
+## 🎯 Implementation Details
 
-* GUI interface
-* Larger training dataset
-* Trigram/Transformer prediction
-* Web-based integration
-* Voice input support
+- **Trie**: Used for O(L) time complexity prefix search where L is word length.
+- **Bigram Model**: Stores word couples to calculate "P(Word_B | Word_A)".
+- **Red-Black Tree**: Ensures balanced word storage and fast lookup.
+- **Word Graph**: Maps successors in sentences to discover semantic links.
 
 ---
 
 ## 👨‍💻 Author
 
 **Yaswanth Jallipalli**
-
----
-
-## 📜 License
-
-This project is for educational and learning purposes.
+(Web conversion by Antigravity AI)
