@@ -1,5 +1,7 @@
 # Intelligent Conversational Engine (Web Edition)
 
+**Live Demo:** [intelligent-conversational-engine-jkym-4x6higb97.vercel.app](https://intelligent-conversational-engine-jkym-4x6higb97.vercel.app/)
+
 A data-structure–driven conversational text engine that provides real-time auto-completion, next-word prediction, and semantic word relationship mapping, now with a modern Web Interface.
 
 ---
